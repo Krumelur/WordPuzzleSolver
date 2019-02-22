@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PuzzleSolver", "PuzzleSolver\PuzzleSolver.csproj", "{46A2CA50-B119-4DF8-A18D-51E7D4B269DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PuzzleSolverLib", "PuzzleSolverLib\PuzzleSolverLib.csproj", "{DF0F997D-21F8-4BB9-9C25-48D7065816E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solver", "Solver", "{096F6FAE-AF86-4AE6-9743-973811E88267}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46A2CA50-B119-4DF8-A18D-51E7D4B269DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46A2CA50-B119-4DF8-A18D-51E7D4B269DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46A2CA50-B119-4DF8-A18D-51E7D4B269DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46A2CA50-B119-4DF8-A18D-51E7D4B269DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF0F997D-21F8-4BB9-9C25-48D7065816E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF0F997D-21F8-4BB9-9C25-48D7065816E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF0F997D-21F8-4BB9-9C25-48D7065816E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF0F997D-21F8-4BB9-9C25-48D7065816E0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{46A2CA50-B119-4DF8-A18D-51E7D4B269DF} = {096F6FAE-AF86-4AE6-9743-973811E88267}
+		{DF0F997D-21F8-4BB9-9C25-48D7065816E0} = {096F6FAE-AF86-4AE6-9743-973811E88267}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3CEB83EF-0A1C-453B-8FAD-3C1AF9D465A9}
+	EndGlobalSection
+EndGlobal
