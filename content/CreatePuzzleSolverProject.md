@@ -40,7 +40,9 @@ If a word is found, it will be stored in a result set that also contains the cel
 
 ## Give it a try
 
-Think about a possible implementation. Maybe you can come up with your own solution. There should be a method
+Think about a possible implementation. Maybe you can come up with your own solution. All code should go into the library project. The console app is there to test the functionality and outpout the results.
+
+There should be a method
 
 `public static SearchResult SearchForWord(char[,] grid, string word)`
 
