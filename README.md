@@ -1,6 +1,6 @@
 # Word Puzzle
 
-I am a programmer. If you are reading this, chances are that you are also a programmer. I bet you will agree: if we see a problem, we begin to wonder if we should solve it manually or maybe write some code to solve the problem and all other related problems.
+I am a programmer. If you are reading this, chances are that you are also into coding and I bet you will agree: if we see a problem, we begin to wonder if we should solve it manually or maybe write some code to solve the problem and all other related problems.
 
 **Fun facts**
 
