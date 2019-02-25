@@ -25,7 +25,9 @@ For the specific puzzle he was looking at he had found all words but one and he 
 
 ## Target audience
 
-* Azure developer
+* Azure developers
+
+This tutorial assumes that you're familiar with software development in C# and have some experience with Azure. For more details about a specific topic we sometimes refer to material available on [Microsoft Learn](https://docs.microsoft.com/en-us/learn/).
 
 ## Abstract
 
@@ -48,13 +50,14 @@ After the workshop you will be able to create complex solutions by connecting di
 
 ### Content
 
-1. [Setup Azure Storage Emulator](./content/Setup_Azure_Storage_Emulator.md)
 1. [Create solution in Visual Studio](./content/CreateBlankVSSolution.md)
     1. [Add and implement Puzzle solver project](./content/CreatePuzzleSolverProject.md)
-    1. Add and implement Azure Functions project
+    1. [Setup Azure Storage Emulator](./content/Setup_Azure_Storage_Emulator.md)
+    1. [Add and implement Azure Functions project](./content/Add_and_implement_Azure_Functions_project.md)
         1. Receive a BLOB SAS
         1. Process an uploaded puzzle image
         1. Return processed puzzle to client
+    1. [Upload to BLOB storage](./content/Upload_to_BLOB_storage)
 1. Configure services in Azure Portal
     1. BLOB storage
     1. Functions
