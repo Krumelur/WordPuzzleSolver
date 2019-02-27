@@ -20,8 +20,18 @@ In the portal of the custom vision service, sign in with the same account you us
 * Classification types: multiclass
 * Domains: General
 
-## Upload training data
+## Create training data
 
 This is the tricky part. The goal is to recognize characters and support different fonts. Our word puzzles will only support uppercase characters to not make it too complicated. This means we will have the vision AI need to dfferentiate 26 images (A..Z).
 
 I created a bash script that takes True Type Fonts (TTF) as input and turns every character into image. This is based on [ImageMagick](http://www.imagemagick.org). If you're intersted in the details, you can find the [script and the fonts I used in this repo](/utils/TTFConverter).
+
+## Upload training data
+
+The custom vision portal allows to batch upload multiple images. For every exported font, take the character images and upload them and assign tags to them (select all "A" and assign the tag "A" and so on). This is a pretty tedious process - I did it for seven font files and more might be needed to increase the recognition reliability. There's also a vision API available that could be used to automate the upload and tagging process. 
+
+**At the time of this writing the link from the Azure portal to the API reference is pointing to an older (outdated?) version.**  The latest version seems to be 2.2 which can be found here: https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_2.2/operations/5b63704940d86a0fb87aab36
+
+> Microsoft documentation even covers the [C# Nuget package](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/csharp-tutorial) available to communicate with Custom Vision API. I'll keep this as an exercise for the reader to automate the training process or maybe cover it in a different tutorial.
+
+If all the images have been tagged, click the "Train" button in the top toolbar and let custom vision API do its magic. If you switch to the "Predictions" tab, you can try out the service by uploading a test image. It will also expose the restful endpoint to talk to the service.
