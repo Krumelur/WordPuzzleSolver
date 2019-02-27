@@ -53,6 +53,9 @@ After the workshop you will be able to create complex solutions by connecting di
 1. [Create solution in Visual Studio](./content/CreateBlankVSSolution.md)
     1. [Add and implement Puzzle solver project](./content/CreatePuzzleSolverProject.md)
     1. [Setup Azure Storage Emulator](./content/Setup_Azure_Storage_Emulator.md)
+    1. Custom Vision
+        1. [Setup](./content/Setup_Custom_Vision.md)
+        1. Create and upload training data
     1. Add and implement Azure Functions project
         1. [Receive a BLOB SAS](./content/Add_and_implement_Azure_Functions_project_1.md)
         1. [Process an uploaded puzzle image](./content/Add_and_implement_Azure_Functions_project_2.md)
@@ -61,9 +64,7 @@ After the workshop you will be able to create complex solutions by connecting di
 1. Configure services in Azure Portal
     1. BLOB storage
     1. Functions
-    1. Custom Vision
-        1. Setup
-        1. Create and upload training data
+    
 1. Deploy solution to Azure
     1. Setup DevOps and Github integration
     2. Solve a word puzzle on Azure
