@@ -65,7 +65,7 @@ By adding the above to the signature of the function, the `storage` parameter wi
 }
 ```
 
-We can now add the code to get a reference to the container in our local storage which we created earlier. For a full reference, please see the source code in this repository.
+We can now add the code to get a reference to the container in our local storage which we created earlier. For a full reference, please see the [source code in this repository](/blob/master/src/WordPuzzle/AzureFunctions/UploadProvider.cs).
 
 ```cs
 using Strg = Microsoft.WindowsAzure.Storage;
@@ -77,7 +77,14 @@ Strg.Blob.CloudBlobContainer container = blobClient.GetContainerReference("wordp
 Details about creating a SAS can also be found in the [Microsoft documentation](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-dotnet-shared-access-signature-part-2).
 
 The function now returns a URL we can use to upload the word puzzle image directly to the BLOB storage.
+If you want to test it, use a tool like PostMan and run a POST request against the URL shown in the Azure Functions output window. In my case, that's `http://localhost:7071/api/UploadProvider`. The returned Json content will look like this:
 
-## Puzzle processor
+```json
+{
+    "uploadurl": "http://127.0.0.1:10000/devstoreaccount1/wordpuzzleuploads/0e419e46-53fe-41b9-b37d-b5d1cc85cae6?sv=2018-03-28&sr=b&sig=O%2BqJ47mex%2FxhOM4ifn1W2M%2FWsfH19SUmfV96apQ76uw%3D&se=2019-02-27T08%3A33%3A38Z&sp=cw",
+    "id": "0e419e46-53fe-41b9-b37d-b5d1cc85cae6"
+}
+```
 
-## Results provider
+The URL can be used to upload directly to the BLOB storage. The identifier can be used by the client to check if a puzzle has been processed and is ready for pickup.
+The upload URL is valid for a limited time only, preventing "spam" uploads in case somebody tries to share it. We will get back to to the upload procedure later.

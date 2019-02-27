@@ -28,12 +28,20 @@ namespace AzureFunctions
 				return new BadRequestObjectResult("Failed to find container.");
 			}
 
-			var sasUri = GetContainerSaSUri(container);
+			(string uri, string uniqueId) = GetContainerSaSUri(container);
 
-			return new OkObjectResult(new { uploadurl = sasUri });
+			return new OkObjectResult(new {
+				uploadurl = uri,
+				id = uniqueId
+			});
 		}
 
-		static string GetContainerSaSUri(Strg.Blob.CloudBlobContainer container)
+		/// <summary>
+		/// Creates a SAS for a BLOB and also returns a unique ID for later retrieval of the BLOB.
+		/// </summary>
+		/// <param name="container"></param>
+		/// <returns></returns>
+		static (string uri, string uniqueId) GetContainerSaSUri(Strg.Blob.CloudBlobContainer container)
 		{
 			// Creating a SaS: https://docs.microsoft.com/en-us/azure/storage/blobs/storage-dotnet-shared-access-signature-part-2
 			var sasConstraints = new Strg.Blob.SharedAccessBlobPolicy()
@@ -42,10 +50,11 @@ namespace AzureFunctions
 				SharedAccessExpiryTime = DateTimeOffset.UtcNow.AddMinutes(5)
 			};
 
-			var blob = container.GetBlobReference(Guid.NewGuid().ToString());
+			var guid = Guid.NewGuid().ToString();
+			var blob = container.GetBlobReference(guid);
 			var url = blob.GetSharedAccessSignature(sasConstraints);
 
-			return blob.Uri + url;
+			return (uri: blob.Uri + url, uniqueId: guid);
 		}
 	}
 }
