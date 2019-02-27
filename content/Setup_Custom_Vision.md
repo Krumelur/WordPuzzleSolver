@@ -24,4 +24,4 @@ In the portal of the custom vision service, sign in with the same account you us
 
 This is the tricky part. The goal is to recognize characters and support different fonts. Our word puzzles will only support uppercase characters to not make it too complicated. This means we will have the vision AI need to dfferentiate 26 images (A..Z).
 
-I created a bash script that takes True Type Fonts (TTF) as input and turns every character into image. This is based on [ImageMagick](http://www.imagemagick.org). If you're intersted in the details, you can find the [script and the fonts I used in this repo]().
+I created a bash script that takes True Type Fonts (TTF) as input and turns every character into image. This is based on [ImageMagick](http://www.imagemagick.org). If you're intersted in the details, you can find the [script and the fonts I used in this repo](/utils/TTFConverter).
