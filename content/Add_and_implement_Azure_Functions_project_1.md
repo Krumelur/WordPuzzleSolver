@@ -59,6 +59,7 @@ By adding the above to the signature of the function, the `storage` parameter wi
 {
   "IsEncrypted": false,
   "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet",
     "StorageConnectionString": "UseDevelopmentStorage=true"
   }

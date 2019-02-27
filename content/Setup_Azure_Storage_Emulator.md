@@ -12,6 +12,6 @@ Please follow the instructions in the link above to download and install Azure S
 
 ### Create the BLOB container
 
-We will upload our word puzzle images to a BLOB storage. BLOBs are stored inside containers - think of them as directories. To begin, add a container called _wordpuzzleupload_ to the BLOB storage.
+We will upload our word puzzle images to a BLOB storage. BLOBs are stored inside containers - think of them as directories. To begin, add a container called _wordpuzzleuploads_ to the BLOB storage.
 
 ![Create Container](../assets/StorageExplorerCreateContainer.png)

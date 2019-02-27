@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="testpuzzle.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="testpuzzle.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PuzzleSolverLib\PuzzleSolverLib.csproj" />
+  </ItemGroup>
+
+</Project>
