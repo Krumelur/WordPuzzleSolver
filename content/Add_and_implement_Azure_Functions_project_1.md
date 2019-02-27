@@ -65,7 +65,7 @@ By adding the above to the signature of the function, the `storage` parameter wi
 }
 ```
 
-We can now add the code to get a reference to the container in our local storage which we created earlier. For a full reference, please see the [source code in this repository](/blob/master/src/WordPuzzle/AzureFunctions/UploadProvider.cs).
+We can now add the code to get a reference to the container in our local storage which we created earlier. For a full reference, please see the [source code in this repository](/src/AzureFunctions/UploadProvider.cs).
 
 ```cs
 using Strg = Microsoft.WindowsAzure.Storage;
