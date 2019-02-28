@@ -1,10 +1,9 @@
 # Setup Custom Vision
 
-When a client uploads a word puzzle it arrives as one big image. We need to get access to the individual cells in that image that ultimately are characters. We'll later see how we can use an Azure function to split the image into separate smaller parts, each containing one character. To process the characters we must convert them into ASCII values, so we can search for words. Recognizing image content is a job for the Azure Custom Vision AI.
+When a client uploads a word puzzle it arrives as one big image. We need to get access to the individual cells in that image that ultimately are characters. We have already create a helper method that splits an image into separate smaller parts, each containing one character. To process the characters we must convert them into ASCII values, so we can search for words. Recognizing image content is a job for the Azure Custom Vision AI.
 
 > **Why are we not using Azure's prebuilt OCR (https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/)?**
-> 
->  Azure has got a prebuild service to recognize text in images. This however cannot recognize individual characters. It needs context to understand the image content.
+Azure has got a prebuild service to recognize text in images. This however cannot recognize individual characters. It needs context to understand the image content.
 
 ## Use Azure Portal to create a Custom Vision service
 

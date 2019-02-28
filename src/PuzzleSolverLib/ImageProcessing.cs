@@ -1,14 +1,43 @@
-﻿using SixLabors.ImageSharp;
-using System.Collections.Generic;
-using System.IO;
+﻿using Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
 using SixLabors.Primitives;
-using SixLabors.ImageSharp.PixelFormats;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace PuzzleSolverLib
 {
 	public static class ImageProcessing
 	{
+		/// <summary>
+		/// Predicts a character using custom vision AI.
+		/// </summary>
+		/// <param name="imageStream">stram containing the character image</param>
+		/// <returns>a tuple containing charcter information. Probability lower than zero means nothing was returned by the custom vision AI</returns>
+		public async static Task<(double probability, char character)> PredictCharacterAsync(Stream imageStream, string predictionKey, string endpoint, string projectId)
+		{
+			// See: https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.cognitiveservices.vision.customvision.prediction.customvisionpredictionclientextensions.predictimageasync?view=azure-dotnet
+
+			var client = new CustomVisionPredictionClient()
+			{
+				ApiKey = predictionKey,
+				Endpoint = endpoint
+			};
+
+			var result = await client.PredictImageAsync(Guid.Parse(projectId), imageStream).ConfigureAwait(false);
+			var prediction = result.Predictions.FirstOrDefault();
+			if (prediction == null)
+			{
+				return (probability: -1, character: '_');
+			}
+
+			return (probability: prediction.Probability, character: prediction.TagName[0]);
+		}
+
 		/// <summary>
 		/// Splits an input image into sub images of dimensions specified by the input parameters.
 		/// </summary>

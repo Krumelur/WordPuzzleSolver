@@ -1,6 +1,6 @@
 # Azure Storage Emulator
 
-The Azure Storage Emulator will allow us to store assets like BLOBs locally wihtout being connected to the cloud. This is very useful for testing. 
+The Azure Storage Emulator will allow us to store assets like BLOBs locally wihtout being connected to the cloud. This is very useful for testing. We will be working with Azure storage in this tutorial, so to follow along, please make sure you have this application installed and setup.
 
 We will not go into the details of the setup process. Instead please refer to the [documentation](https://docs.microsoft.com/en-us/azure/storage/common/storage-use-emulator) and return to this document when done.
 

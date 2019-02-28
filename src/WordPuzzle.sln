@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PuzzleSolver", "PuzzleSolver\PuzzleSolver.csproj", "{46A2CA50-B119-4DF8-A18D-51E7D4B269DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PuzzleSolverTest", "PuzzleSolver\PuzzleSolverTest.csproj", "{46A2CA50-B119-4DF8-A18D-51E7D4B269DF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PuzzleSolverLib", "PuzzleSolverLib\PuzzleSolverLib.csproj", "{DF0F997D-21F8-4BB9-9C25-48D7065816E0}"
 EndProject
@@ -12,8 +12,13 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Functions", "Functions", "{5AF3DA5B-6A62-463D-BDBD-F620C8AF56C3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureFunctions", "AzureFunctions\AzureFunctions.csproj", "{350C2B89-3C0D-4427-8FC3-6A065A463A66}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DF0F997D-21F8-4BB9-9C25-48D7065816E0} = {DF0F997D-21F8-4BB9-9C25-48D7065816E0}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageSplitter", "ImageSplitter\ImageSplitter.csproj", "{EEBC1A9A-F99E-4D1E-B8FE-0A64C0F06BC6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageSplitterTest", "ImageSplitter\ImageSplitterTest.csproj", "{EEBC1A9A-F99E-4D1E-B8FE-0A64C0F06BC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomVisionTest", "CustomVisionTest\CustomVisionTest.csproj", "{B7423FB3-B24A-48AE-821F-2F6DC3C2982D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +42,10 @@ Global
 		{EEBC1A9A-F99E-4D1E-B8FE-0A64C0F06BC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEBC1A9A-F99E-4D1E-B8FE-0A64C0F06BC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEBC1A9A-F99E-4D1E-B8FE-0A64C0F06BC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7423FB3-B24A-48AE-821F-2F6DC3C2982D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7423FB3-B24A-48AE-821F-2F6DC3C2982D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7423FB3-B24A-48AE-821F-2F6DC3C2982D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7423FB3-B24A-48AE-821F-2F6DC3C2982D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +55,7 @@ Global
 		{DF0F997D-21F8-4BB9-9C25-48D7065816E0} = {096F6FAE-AF86-4AE6-9743-973811E88267}
 		{350C2B89-3C0D-4427-8FC3-6A065A463A66} = {5AF3DA5B-6A62-463D-BDBD-F620C8AF56C3}
 		{EEBC1A9A-F99E-4D1E-B8FE-0A64C0F06BC6} = {096F6FAE-AF86-4AE6-9743-973811E88267}
+		{B7423FB3-B24A-48AE-821F-2F6DC3C2982D} = {096F6FAE-AF86-4AE6-9743-973811E88267}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3CEB83EF-0A1C-453B-8FAD-3C1AF9D465A9}

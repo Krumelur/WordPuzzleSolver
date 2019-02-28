@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="A.png" />
+    <None Remove="E.png" />
+    <None Remove="L.png" />
+    <None Remove="S.png" />
+    <None Remove="T.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="A.png" />
+    <EmbeddedResource Include="E.png" />
+    <EmbeddedResource Include="L.png" />
+    <EmbeddedResource Include="S.png" />
+    <EmbeddedResource Include="T.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PuzzleSolverLib\PuzzleSolverLib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Local.App.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

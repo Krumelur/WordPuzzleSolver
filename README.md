@@ -21,7 +21,7 @@ As part of his homework my son had to solve a word puzzle. A word puzzle is a gr
 -----------------------------
 ````
 
-For the specific puzzle he was looking at he had found all words but one and he asked me to help. Instead of searching for the word, an idea started to form in my mind: let the computer find it! How hard can it be with the power of C#, Artifical Intelligence and Azure Cloud Computing! That's how this workshop was born.
+For the specific puzzle he was looking at he had found all words but one and he asked me to help. Instead of searching for the word, an idea started to form in my mind: wouldn't it be great to take a picture of the puzzle and let the computer find it? How hard can it be with the power of C#, Artifical Intelligence and Azure Cloud Computing! That's how this workshop was born.
 
 ## Target audience
 
@@ -50,20 +50,21 @@ After the workshop you will be able to create complex solutions by connecting di
 
 ### Content
 
-1. [Create solution in Visual Studio](./content/CreateBlankVSSolution.md)
+1. [Setup Azure Storage Emulator](./content/Setup_Azure_Storage_Emulator.md)
+1. [Create a solution in Visual Studio](./content/CreateBlankVSSolution.md)
     1. [Add and implement Puzzle solver project](./content/CreatePuzzleSolverProject.md)
     1. [Split puzzle image](./content/SplitPuzzleImage.md)
-    1. [Setup Azure Storage Emulator](./content/Setup_Azure_Storage_Emulator.md)
-    1. [Setup Custom Vision AI](./content/Setup_Custom_Vision.md)
     1. Add and implement Azure Functions project
         1. [Receive a BLOB SAS](./content/Add_and_implement_Azure_Functions_project_1.md)
-        1. [Process an uploaded puzzle image](./content/Add_and_implement_Azure_Functions_project_2.md)
+        1. Process an uploaded puzzle image
+            1. [Setup custom vision AI](./content/Setup_Custom_Vision.md)
+            1. [Send image to custom vision AI](./content/SendImageToCustomVisionAI.md)
+            1. [Create a BLOB triggered function](./content/Add_and_implement_Azure_Functions_project_2.md)
         1. Return processed puzzle to client
     1. [Upload to BLOB storage](./content/Upload_to_BLOB_storage)
 1. Configure services in Azure Portal
     1. BLOB storage
     1. Functions
-    
 1. Deploy solution to Azure
     1. Setup DevOps and Github integration
     2. Solve a word puzzle on Azure

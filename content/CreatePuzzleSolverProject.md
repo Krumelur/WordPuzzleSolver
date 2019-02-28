@@ -1,10 +1,10 @@
 # Create Puzzle Solver Project
 
-We start with a simple .NET Core console app that references a .NET standard library which contains the code to scan a two dimensional array of text character to find a set of predefined words. In later parts of the tutorial we will find a way to convert a picture of a puzzle into its text only representation but we can do all the groundwork now.
+Although this is all about Azure and the cloud, we're going to start with a simple .NET Core console app that references a .NET standard library which contains the code to scan a two dimensional array of text character to find a set of predefined words. We can then use this library from within the yet to be created Azure functions.
 
 ## Create the project
 
-* In the previously created solution, add a new .NET Core Console project and call it _PuzzleSolver_.
+* In the previously created solution, add a new .NET Core Console project and call it _PuzzleSolverTest_.
 * Add another project, this time a .NET standard library called _PuzzleSolverLib_
 
 Feel free to organize the two projects in a solution folder if you like to.
