@@ -52,6 +52,7 @@ After the workshop you will be able to create complex solutions by connecting di
 
 1. [Create solution in Visual Studio](./content/CreateBlankVSSolution.md)
     1. [Add and implement Puzzle solver project](./content/CreatePuzzleSolverProject.md)
+    1. [Split puzzle image](./content/SplitPuzzleImage.md)
     1. [Setup Azure Storage Emulator](./content/Setup_Azure_Storage_Emulator.md)
     1. [Setup Custom Vision AI](./content/Setup_Custom_Vision.md)
     1. Add and implement Azure Functions project

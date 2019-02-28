@@ -1,6 +1,6 @@
 # Create Puzzle Solver Project
 
-We start with a simple .NET Core console app that references a .NET standard library which contains the code to scan a two dimensional array of text character to find a set of predefined words.
+We start with a simple .NET Core console app that references a .NET standard library which contains the code to scan a two dimensional array of text character to find a set of predefined words. In later parts of the tutorial we will find a way to convert a picture of a puzzle into its text only representation but we can do all the groundwork now.
 
 ## Create the project
 
