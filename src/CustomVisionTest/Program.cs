@@ -3,7 +3,6 @@ using System;
 using System.Configuration;
 using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 
 namespace CustomVisionTest
 {
@@ -21,8 +20,8 @@ namespace CustomVisionTest
 			var config = ConfigurationManager.OpenMappedExeConfiguration(configMap, ConfigurationUserLevel.None);
 
 			var predictionKey = config.AppSettings.Settings["CustomAIPredictionKey"]?.Value;
-			var endpoint = config.AppSettings.Settings["Endpoint"]?.Value;
-			var projectId = config.AppSettings.Settings["ProjectId"]?.Value;
+			var endpoint = config.AppSettings.Settings["CustomVisionAIEndpoint"]?.Value;
+			var projectId = config.AppSettings.Settings["CustomVisionAIProjectId"]?.Value;
 
 			var assembly = Assembly.GetExecutingAssembly();
 			var resourceNames = assembly.GetManifestResourceNames().Where(x => x.EndsWith(".png"));

@@ -41,7 +41,7 @@ When we implemented the helper method to split up in image into sub-images, we i
 
 Let's define the names for the parameters:
 
-* Number of columns: `num_cols` (14)
+* Number of columns: `num_colums` (14)
 * Numnber of rows: `num_rows` (14)
 * Top offset: `offset_top` (115)
 * Left offset: `offset_left` (40)
@@ -49,6 +49,7 @@ Let's define the names for the parameters:
 * Height of the cells: `cell_height` (40)
 * Vertical spacing between two rows: `cell_spacing_vertical` (12)
 * Hortizontal spacing between to columns: `cell_spacing_horizontal` (11)
+* Words to search for: `words` (PERFUME, HAIRSTYLE, CURLING IRON, MOUSTACHE, BEARD, EYESHADOW, SAUNA, STYLIST, BRUSH, PERMANENT, SHAMPOO, WAXING, GOATEE, BLOWDRYER, MAKEUP, TRIM, RAZOR, HAIRCUT, COMB, SPA)
 
 Using the Azure Storage Explorer, add an image of a word puzzle to the container we created earlier. You can use the [../assets/testpuzzle.jpg](test file in this repo). After the upload has completed, right click the BLOB and select _Properties -> Add Metadata_ and add the parameters shown above. If you used the puzzle image of the repo, set the values to what is shown above in parantheses.
 
@@ -67,8 +68,20 @@ The metadata provides us with all the information we need to split the image and
 ```cs
 var memoryStream = new MemoryStream();
 await blob.DownloadToStreamAsync(memoryStream).ConfigureAwait(false);
+memoryStream.Position = 0;
 ```
 
 ### Use custom vision service
 
-https://southcentralus.dev.cognitive.microsoft.com/docs/services/450e4ba4d72542e889d93fd7b8e960de/operations/5a6264bc40d86a0ef8b2c290
+> **Note:** We need to provide the prediction key, the API endpoint URI and the project ID. None of these should be hardcoded in the source code! Instead, add them as entries to the `local.settings.json` file in your functions project. This file will not be under source control. When deploying to Azure, we will add the configuration values directly into the web app's configurarion settings.
+
+Letting the AI predict the character images is just a matter of calling the previously implemented helper method in our `ImageProcessing` class. Because the method is `async` we can optimize execution times: instead of waiting for each individual cell to be recognized, create a list of tasks and then use `Task.WhenAll()`.
+
+### Find words
+
+Now that we have the processed characters, we can call the `Solver.SearchForWord()` method for all the words we're looking for. The completed version in the repo adds quite a bit of debugging output so don't be surprised if you find more code than expected.
+
+### Save results
+
+The last step is to save the results back into a database where the client can pick them up.
+

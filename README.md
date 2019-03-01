@@ -52,7 +52,7 @@ After the workshop you will be able to create complex solutions by connecting di
 
 1. [Setup Azure Storage Emulator](./content/Setup_Azure_Storage_Emulator.md)
 1. [Create a solution in Visual Studio](./content/CreateBlankVSSolution.md)
-    1. [Add and implement Puzzle solver project](./content/CreatePuzzleSolverProject.md)
+    1. [Add and implement Puzzle solver](./content/CreatePuzzleSolverProject.md)
     1. [Split puzzle image](./content/SplitPuzzleImage.md)
     1. Add and implement Azure Functions project
         1. [Receive a BLOB SAS](./content/Add_and_implement_Azure_Functions_project_1.md)

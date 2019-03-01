@@ -66,7 +66,7 @@ namespace WordFinder
 				Console.WriteLine("Done");
 				Console.ReadLine();
 			}
-			// because i felt guilty about having no error handling
+			// Because I felt guilty about having no error handling...
 			catch (Exception ex)
 			{
 				Console.WriteLine(ex.Message);
