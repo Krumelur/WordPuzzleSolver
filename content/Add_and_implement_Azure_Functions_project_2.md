@@ -83,5 +83,5 @@ Now that we have the processed characters, we can call the `Solver.SearchForWord
 
 ### Save results
 
-The last step is to save the results back into a database where the client can pick them up.
+The last step is to save the results back. Again, we will use the BLOB's meta data dictionary. The required call 
 

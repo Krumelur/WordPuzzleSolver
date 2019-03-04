@@ -3,23 +3,41 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
 using Microsoft.WindowsAzure.Storage.Blob;
 using PuzzleSolverLib;
-using System.Threading.Tasks;
 using System.Linq;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace AzureFunctions
 {
-    public static class PuzzleProcessor
+	public static class PuzzleProcessor
     {
+		/// <summary>
+		/// Gets called whenever an image BLOB was uploaded or modified.
+		/// </summary>
+		/// <param name="blob"></param>
+		/// <param name="log"></param>
+		/// <returns></returns>
         [FunctionName("PuzzleProcessor")]
         public async static Task Run(
 			[BlobTrigger("wordpuzzleuploads/{name}", Connection = "StorageConnectionString")]CloudBlockBlob blob,
 			ILogger log)
         {
+			
+
+			// Ensure that meta data gets loaded.
+			await blob.FetchAttributesAsync().ConfigureAwait(false);
+
+			// Changing metadata will trigger the function. To avoid a recursion when saving found results
+			// back, check if the key is there.
+			if (blob.Metadata.ContainsKey("results"))
+			{
+				log.LogInformation("Stopping execution - BLOB already has results data.");
+				return;
+			}
+
 			log.LogInformation($"Image puzzle uploaded. Name:{blob.Name}");
 
 			// Get BLOB content (the image). 
@@ -108,13 +126,19 @@ namespace AzureFunctions
 			}
 
 			// Now do the search.
+			var searchResults = new List<Solver.SearchResult>();
 			foreach (var word in words)
 			{
-				SearchWord(letterGrid, word, log);
+				var result = SearchWord(letterGrid, word, log);
+				searchResults.Add(result);
 			}
+
+			// Save found words back to BLOB.
+			blob.Metadata["results"] = JsonConvert.SerializeObject(searchResults);
+			await blob.SetMetadataAsync().ConfigureAwait(false);
         }
 
-		static void SearchWord(char[,] letterGrid, string word, ILogger log)
+		static Solver.SearchResult SearchWord(char[,] letterGrid, string word, ILogger log)
 		{
 			log.LogInformation($"Searching for '{word}'...");
 			var result = Solver.SearchForWord(letterGrid, word);
@@ -126,6 +150,8 @@ namespace AzureFunctions
 					log.LogInformation($"  - '{item.Letter}' {item.Position.Row},{item.Position.Col}");
 				}
 			}
+
+			return result;
 		}
 	}
 }
