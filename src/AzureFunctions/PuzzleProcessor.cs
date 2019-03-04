@@ -25,8 +25,6 @@ namespace AzureFunctions
 			[BlobTrigger("wordpuzzleuploads/{name}", Connection = "StorageConnectionString")]CloudBlockBlob blob,
 			ILogger log)
         {
-			
-
 			// Ensure that meta data gets loaded.
 			await blob.FetchAttributesAsync().ConfigureAwait(false);
 

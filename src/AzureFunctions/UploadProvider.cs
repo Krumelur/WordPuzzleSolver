@@ -13,7 +13,7 @@ namespace AzureFunctions
 	{
 		[FunctionName("UploadProvider")]
 		public static async Task<IActionResult> Run(
-			[HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)] HttpRequest req,
+			[HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req,
 			[StorageAccount("StorageConnectionString")] Strg.CloudStorageAccount storage,
 			ILogger log)
 		{
@@ -22,7 +22,7 @@ namespace AzureFunctions
 			var blobClient = storage.CreateCloudBlobClient();
 			Strg.Blob.CloudBlobContainer container = blobClient.GetContainerReference("wordpuzzleuploads");
 
-			var containerExists = await container.ExistsAsync();
+			var containerExists = await container.ExistsAsync().ConfigureAwait(false);
 			if (!containerExists)
 			{
 				return new BadRequestObjectResult("Failed to find container.");

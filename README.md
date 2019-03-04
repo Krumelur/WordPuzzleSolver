@@ -60,12 +60,12 @@ After the workshop you will be able to create complex solutions by connecting di
             1. [Setup custom vision AI](./content/Setup_Custom_Vision.md)
             1. [Send image to custom vision AI](./content/SendImageToCustomVisionAI.md)
             1. [Create a BLOB triggered function](./content/Add_and_implement_Azure_Functions_project_2.md)
-        1. Return processed puzzle to client
+        1. [Return processed puzzle to client](./content/ReturnProcessedPuzzle.md)
     1. [Upload to BLOB storage](./content/Upload_to_BLOB_storage)
+1. [Build a client app](./content/BuildClientApp.md)
 1. Configure services in Azure Portal
     1. BLOB storage
     1. Functions
 1. Deploy solution to Azure
     1. Setup DevOps and Github integration
     2. Solve a word puzzle on Azure
-1. Build a mobile client app

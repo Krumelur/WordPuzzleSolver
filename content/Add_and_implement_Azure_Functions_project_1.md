@@ -4,7 +4,7 @@ Azure Functions allows developers to host business logic that can be executed wi
 
 In this part of the tutorial we are going to create three functions, each handling a specific portion of our app's backend:
 
-* Upload provider: this is triggered by an HTTP POST and will return the upload location for the puzzle image.
+* Upload provider: this is triggered by an HTTP GET and will return the upload location for the puzzle image.
 * Puzzle processer: triggered by the Azure BLOB storage after the image has been uploaded. It will figure out the contents of the puzzle image.
 * Results provider: an HTTP GET triggered function the client can use to download the processed puzzle.
 
@@ -22,14 +22,14 @@ Add a new **Azure Functions** project called "AzureFunctions". Make sure to sele
 
 ![Create Functions Project](../assets/Create_Functions_Project.png)
 
-By default the function is named "Function1". Rename the file and the function to "UploadProvider" and change the allowed HTTP verbs to have only "post". It should look like this:
+By default the function is named "Function1". Rename the file and the function to "UploadProvider" and change the allowed HTTP verbs to have only "get". It should look like this:
 
 ```cs
 public static class UploadProvider
 {
     [FunctionName("UploadProvider")]
     public static async Task<IActionResult> Run(
-        [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)] HttpRequest req, ILogger log)
+        [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req, ILogger log)
     {
         log.LogInformation("Upload requested");
         return new BadRequestObjectResult("Not implemented yet!");
@@ -78,7 +78,7 @@ Strg.Blob.CloudBlobContainer container = blobClient.GetContainerReference("wordp
 Details about creating a SAS can also be found in the [Microsoft documentation](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-dotnet-shared-access-signature-part-2).
 
 The function now returns a URL we can use to upload the word puzzle image directly to the BLOB storage.
-If you want to test it, use a tool like PostMan and run a POST request against the URL shown in the Azure Functions output window. In my case, that's `http://localhost:7071/api/UploadProvider`. The returned Json content will look like this:
+If you want to test it, use a tool like PostMan and run a GET request against the URL shown in the Azure Functions output window. In my case, that's `http://localhost:7071/api/UploadProvider`. The returned Json content will look like this:
 
 ```json
 {
