@@ -21,6 +21,7 @@ The solution's code is already hosted on GitHub. We can use the repository to di
   * Select the "C# Function" template
   * As path to the solution browse the repo and select the .csproj file of the Azure Function project
   * You can remove the step from the pipeline that runs the project tests because we don't have any tests (Yuck!)
+  * Add another "Nuget restore" step and point it's source to the "PuzzleSolverLib" project. The functions project depends on it and Nuget will otherwise not restore the reference's packages. (_Alternatively using `dotnet restore` could work, it does not have the same limitations but I have not tried it_)
   * Save & Queue the pipeline and make sure it builds
 
   > **Note:** I had to change the "Version of Nuget to install" from the preset "4.4.1" to ">=4.6" to correctly build the solution. You can find the version of Nuget running locally by checking Visual Studio -> Help/About
