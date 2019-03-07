@@ -32,7 +32,7 @@ This tutorial assumes that you're familiar with software development in C# and h
 ## Abstract
 
 ### Workshop
-In this workshop, we will go through all the steps necessary to successfully create a FaaS (Function as a Service) based solution that allows uploading a picture of a word puzzle to the Azure cloud, setup an AI (Artificial Intelligence) to recognize the puzzle's characters and code an algorithm to find given words in the processed puzzle. Once everything is setup and deployed using Azure DevOps, we wil implement a Xamarin.Forms based client project to allow for direct upload of scanned puzzles.
+In this workshop, we will go through all the steps necessary to successfully create a FaaS (Function as a Service) based solution that allows uploading a picture of a word puzzle to the Azure cloud, setup an AI (Artificial Intelligence) to recognize the puzzle's characters and code an algorithm to find given words in the processed puzzle. Once everything is setup and deployed to Azure, we wil implement a simple console based client project to allow for direct upload of scanned puzzles.
 
 After the workshop you will be able to create complex solutions by connecting different Azure based services. Each service by itself is simple and self contained.
 
@@ -62,10 +62,9 @@ After the workshop you will be able to create complex solutions by connecting di
             1. [Create a BLOB triggered function](./content/Add_and_implement_Azure_Functions_project_2.md)
         1. [Return processed puzzle to client](./content/ReturnProcessedPuzzle.md)
     1. [Upload to BLOB storage](./content/Upload_to_BLOB_storage)
-1. [Build a client app](./content/BuildClientApp.md)
+1. [Build a client app and test locally](./content/BuildClientApp.md)
 1. Configure services in Azure Portal
     1. BLOB storage
     1. Functions
 1. Deploy solution to Azure
-    1. Setup DevOps and Github integration
-    2. Solve a word puzzle on Azure
+1. Solve a word puzzle on Azure
