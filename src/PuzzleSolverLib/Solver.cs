@@ -39,6 +39,8 @@ namespace PuzzleSolverLib
 			{
 				Letters.Add(new LetterAtPosition(letter, row, col));
 			}
+
+			public override string ToString() => $"[SearchResult] Found = {Found}, Word = {Word}";
 		}
 
 		public static SearchResult SearchForWord(char[,] grid, string word)

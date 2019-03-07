@@ -49,7 +49,7 @@ Let's define the names for the parameters:
 * Height of the cells: `cell_height` (40)
 * Vertical spacing between two rows: `cell_spacing_vertical` (12)
 * Hortizontal spacing between to columns: `cell_spacing_horizontal` (11)
-* Words to search for: `words` (PERFUME, HAIRSTYLE, CURLING IRON, MOUSTACHE, BEARD, EYESHADOW, SAUNA, STYLIST, BRUSH, PERMANENT, SHAMPOO, WAXING, GOATEE, BLOWDRYER, MAKEUP, TRIM, RAZOR, HAIRCUT, COMB, SPA)
+* Words to search for: `words` (PERFUME, HAIRSTYLE, CURLING, IRON, MOUSTACHE, BEARD, EYESHADOW, SAUNA, STYLIST, BRUSH, PERMANENT, SHAMPOO, WAXING, GOATEE, BLOWDRYER, MAKEUP, TRIM, RAZOR, HAIRCUT, COMB, SPA)
 
 Using the Azure Storage Explorer, add an image of a word puzzle to the container we created earlier. You can use the [../assets/testpuzzle.jpg](test file in this repo). After the upload has completed, right click the BLOB and select _Properties -> Add Metadata_ and add the parameters shown above. If you used the puzzle image of the repo, set the values to what is shown above in parantheses.
 

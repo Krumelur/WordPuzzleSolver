@@ -1,4 +1,3 @@
-using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
@@ -9,7 +8,7 @@ using Strg = Microsoft.WindowsAzure.Storage;
 
 namespace AzureFunctions
 {
-    public static class GetPuzzleResults
+	public static class GetPuzzleResults
     {
         [FunctionName("PuzzleResults")]
         public static async Task<IActionResult> Run(
