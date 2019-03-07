@@ -46,7 +46,7 @@ After the workshop you will be able to create complex solutions by connecting di
 1. BLOB storage triggers Azure function to kick off puzzle processing
 1. Azure function contacts Azure Custom Vision API to extract text from uploaded image
 1. Azure function runs code to find words in extracted text
-1. Client polls URL to get results back
+1. Client polls URL to get results back 
 
 ### Content
 
@@ -64,7 +64,7 @@ After the workshop you will be able to create complex solutions by connecting di
     1. [Upload to BLOB storage](./content/Upload_to_BLOB_storage)
 1. [Build a client app and test locally](./content/BuildClientApp.md)
 1. Configure services in Azure Portal
-    1. BLOB storage
-    1. Functions
-1. Deploy solution to Azure
+    1. [BLOB storage](./content/ConfigureAzurePortalBlobs.md)
+    1. [Functions](./content/ConfigureAzurePortalFunctions.md)
+1. [Deploy solution to Azure](./content/DeployToAzure.md)
 1. Solve a word puzzle on Azure
