@@ -67,4 +67,4 @@ After the workshop you will be able to create complex solutions by connecting di
     1. [BLOB storage](./content/ConfigureAzurePortalBlobs.md)
     1. [Functions](./content/ConfigureAzurePortalFunctions.md)
 1. [Deploy solution to Azure](./content/DeployToAzure.md)
-1. Solve a word puzzle on Azure
+1. [Solve a word puzzle on Azure](./content/SolveWordPuzzleWithAzure.md)

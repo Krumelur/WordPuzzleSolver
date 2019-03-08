@@ -49,7 +49,7 @@ Switch to the "Releases" menu option and create a new pipeline.
 
 ### Test the CI/CD process
 
-Make some changes in the local repo and push them to GitHub. It should trigger a build followed by a deployment.
+Make some changes in the local repo and push them to GitHub. It should trigger a build followed by a deployment. Open Azure Portal and navigate to the functions app. It should show the three functions we created in Visual Studio.
 
 
 
