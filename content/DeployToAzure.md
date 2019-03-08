@@ -30,7 +30,26 @@ The solution's code is already hosted on GitHub. We can use the repository to di
 
 ### Deploy the project
 
-TODO: Configuration on Azure! (Connection strings)
+Switch to the "Releases" menu option and create a new pipeline.
+
+* Select the template "Deploy a functiona pp to Azrue Functions"
+* Select the just added stage (it should show a red exclamation mark and "1 job, 1 task") to configure it
+  * Select the correct Azure subscription (and authorize if necessary)
+  * Select the correct app service name from the dropdown
+  * Save
+* Switch back to the "Pipeline" tab
+  * Click "Add" next to "Artifcats" 
+  * Select "Build" as the source type
+  * Select the correct DevOps project
+  * Select the earlier created build pipeline as the source
+  * Set the default version to "Latest"
+  * Save
+* Select the lightning icon in the Artifacts section and enable continous deployment whenever a new build is available.
+* Save
+
+### Test the CI/CD process
+
+Make some changes in the local repo and push them to GitHub. It should trigger a build followed by a deployment.
 
 
 
