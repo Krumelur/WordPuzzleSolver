@@ -9,6 +9,7 @@
     <None Remove="A.png" />
     <None Remove="E.png" />
     <None Remove="L.png" />
+    <None Remove="N.png" />
     <None Remove="S.png" />
     <None Remove="T.png" />
   </ItemGroup>
@@ -17,6 +18,7 @@
     <EmbeddedResource Include="A.png" />
     <EmbeddedResource Include="E.png" />
     <EmbeddedResource Include="L.png" />
+    <EmbeddedResource Include="N.png" />
     <EmbeddedResource Include="S.png" />
     <EmbeddedResource Include="T.png" />
   </ItemGroup>

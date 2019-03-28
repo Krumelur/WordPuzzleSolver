@@ -21,6 +21,6 @@ public async static Task<(double probability, char character)> PredictCharacterA
     string projectId)
 ```
 
-> **Note:** don't forget to add the `Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction` Nuget package. At the time of this writing, this package is only available as a preview version, so make sure to "Include prerelease" packages.
+> **Note:** don't forget to add the `Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction` Nuget package.
 
 You can find the completed version of this method in the repo.

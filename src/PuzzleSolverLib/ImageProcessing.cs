@@ -28,7 +28,7 @@ namespace PuzzleSolverLib
 				Endpoint = endpoint
 			};
 
-			var result = await client.PredictImageAsync(Guid.Parse(projectId), imageStream).ConfigureAwait(false);
+			var result = await client.ClassifyImageAsync(Guid.Parse(projectId), "Iteration12", imageStream).ConfigureAwait(false);
 			var prediction = result.Predictions.FirstOrDefault();
 			if (prediction == null)
 			{
