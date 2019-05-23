@@ -1,5 +1,23 @@
 # Word Puzzle
 
+This is the source repo for a project I streamed live on Twitch. You can find my stream at:
+
+https://www.twitch.tv/reneruppert
+
+**Please follow to not miss upcoming events!**
+
+Recorded versions of each session are available on Youtube:
+
+https://www.youtube.com/playlist?list=PLTDEGRa8OTnd_-EKwdowYYON1PEBX7Swj
+
+**Subscribe to be notified about new uploads!**
+
+If you'd like to contact me, feel free to use Twitter:
+
+https://twitter.com/rene_ruppert
+
+**Intro**
+
 I am a programmer. If you are reading this, chances are that you are also into coding and I bet you will agree: if we see a problem, we begin to wonder if we should solve it manually or maybe write some code to solve the problem and all other related problems.
 
 **Fun facts**
